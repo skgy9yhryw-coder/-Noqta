@@ -81,4 +81,4 @@ function skipOnboard(){localStorage.setItem('noqtaOnboard','1');document.getElem
 function toast(t){let e=document.getElementById('toast');e.textContent=t;e.style.display='block';clearTimeout(window.tt);window.tt=setTimeout(()=>e.style.display='none',2600)}
 document.querySelectorAll('#prefChoice button').forEach(b=>b.onclick=()=>b.classList.toggle('on'));
 sb.auth.onAuthStateChange(async()=>{try{await requireProfile();await loadSaved();render()}catch(e){console.error(e)}});
-</script><script>window.addEventListener("load",()=>{document.querySelector(".brand")?.setAttribute("title","Noqta")});</script></body><script src="map-fix.js"></script></html>
+</script><script>window.addEventListener("load",()=>{document.querySelector(".brand")?.setAttribute("title","Noqta")});</script></body></html>
