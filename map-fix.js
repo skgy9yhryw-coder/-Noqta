@@ -6,7 +6,9 @@ window.addEventListener("load", function () {
 
     try {
       if (!window.noqtaMap) {
-        window.noqtaMap = L.map(el).setView([51.916, 4.479], 14);
+        window.noqtaMap = L.map(el, {
+          zoomControl: true
+        }).setView([51.916, 4.479], 14);
 
         L.tileLayer(
           "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
@@ -15,6 +17,18 @@ window.addEventListener("load", function () {
             attribution: "© OpenStreetMap contributors"
           }
         ).addTo(window.noqtaMap);
+      }
+
+      // فصل زر تحديد الموقع عن أزرار + و -
+      const locateButton = document.querySelector(
+        "[aria-label='تحديد موقعي'], [title='تحديد موقعي'], .locate-btn"
+      );
+
+      if (locateButton) {
+        locateButton.style.position = "absolute";
+        locateButton.style.right = "10px";
+        locateButton.style.bottom = "10px";
+        locateButton.style.zIndex = "1000";
       }
 
       window.noqtaMap.invalidateSize();
