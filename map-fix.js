@@ -24,7 +24,7 @@ window.addEventListener("load", function () {
       style.textContent = `
         .mapwrap .locbtn {
           left: 12px !important;
-          top: 62px !important;
+          top: 82px !important;
           right: auto !important;
           bottom: auto !important;
           z-index: 1000 !important;
