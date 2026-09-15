@@ -19,17 +19,18 @@ window.addEventListener("load", function () {
         ).addTo(window.noqtaMap);
       }
 
-      // فصل زر تحديد الموقع عن أزرار + و -
-      const locateButton = document.querySelector(
-        "[aria-label='تحديد موقعي'], [title='تحديد موقعي'], .locate-btn"
-      );
-
-      if (locateButton) {
-        locateButton.style.position = "absolute";
-        locateButton.style.right = "10px";
-        locateButton.style.bottom = "10px";
-        locateButton.style.zIndex = "1000";
-      }
+      // وضع زر تحديد الموقع تحت أزرار + و -
+      const style = document.createElement("style");
+      style.textContent = `
+        .mapwrap .locbtn {
+          left: 12px !important;
+          top: 62px !important;
+          right: auto !important;
+          bottom: auto !important;
+          z-index: 1000 !important;
+        }
+      `;
+      document.head.appendChild(style);
 
       window.noqtaMap.invalidateSize();
     } catch (error) {
